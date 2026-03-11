@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirect</title>
+<script>
+const params = new URLSearchParams(window.location.search);
+const sku = params.get('sku');
+window.location.href = "https://script.google.com/a/fastsigns.com/macros/s/AKfycbxdGs_Wr8msi0a6foRxvVpK2dGzUpuMaZMRZOdVm1s2g5sj-6-FwYzGjYEwNyTcWlVn/exec" + (sku ? "?sku=" + sku : "");
+</script>
+</head>
+<body>
+Redirecting...
+</body>
+</html>
