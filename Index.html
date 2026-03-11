@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Redirect</title>
-<script>
-const params = new URLSearchParams(window.location.search);
-const sku = params.get('sku');
-window.location.href = "https://script.google.com/a/fastsigns.com/macros/s/AKfycbxdGs_Wr8msi0a6foRxvVpK2dGzUpuMaZMRZOdVm1s2g5sj-6-FwYzGjYEwNyTcWlVn/exec" + (sku ? "?sku=" + sku : "");
-</script>
+  <meta charset="UTF-8">
+  <title>Redirect</title>
+  <script>
+    // Get the SKU parameter from the URL
+    const params = new URLSearchParams(window.location.search);
+    const sku = params.get('sku');
+
+    // Your Google Apps Script deployment URL
+    const scriptURL = "https://script.google.com/a/fastsigns.com/macros/s/AKfycbxdGs_Wr8msi0a6foRxvVpK2dGzUpuMaZMRZOdVm1s2g5sj-6-FwYzGjYEwNyTcWlVn/exec";
+
+    // Build the redirect URL
+    const redirectURL = sku ? `${scriptURL}?sku=${encodeURIComponent(sku)}` : scriptURL;
+
+    // Redirect immediately
+    window.location.href = redirectURL;
+  </script>
 </head>
 <body>
-Redirecting...
+  <p>Redirecting…</p>
 </body>
 </html>
